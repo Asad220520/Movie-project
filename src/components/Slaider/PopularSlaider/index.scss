@@ -1,0 +1,55 @@
+#popularSlaider {
+  padding-top: 50px;
+  background: #000;
+  .popularSlaider {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    border-bottom: 1px solid #fff;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .image {
+      border-radius: 8px;
+      position: relative;
+      width: 200px;
+      box-shadow: inset 0 0 15px #f1ecec, 0 8px 15px #514e4e;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        box-shadow: inset 0 0 0 #000, 0 8px 15px #000;
+      }
+    }
+    p {
+      width: 180px;
+      height: 45px;
+      opacity: 0.9;
+      color: #fff;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      margin-left: 8px;
+    }
+    i {
+      gap: 20px;
+      color: #fff;
+      position: relative;
+      bottom: 350px;
+      background: green;
+      background: rgb(102, 103, 102);
+      padding: 0px 4px;
+    }
+    span {
+      gap: 20px;
+      color: yellow;
+    }
+    b {
+      color: yellow;
+      font-size: 12px;
+      position: relative;
+      bottom: 30px;
+      right: 35px;
+    }
+  }
+}

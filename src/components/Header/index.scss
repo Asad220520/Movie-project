@@ -1,0 +1,42 @@
+#header {
+  background: #000;
+  border-bottom: 1px solid #fff;
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    &__logo {
+      color: #fff;
+    }
+    &__nav {
+      display: flex;
+      align-items: center;
+      gap: 70px;
+    }
+    &__menu {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    &__link {
+      color: #fff;
+    }
+    .active {
+      color: red;
+    }
+    &__login{
+      display: flex;
+      gap: 10px;
+      button{
+        padding: 6px 20px;
+        border-radius: 7px;
+        border: none;
+        outline: none;
+        color: #fff;
+        background: red;
+        cursor: pointer;
+      }
+    }
+  }
+}

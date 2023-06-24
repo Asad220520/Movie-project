@@ -1,0 +1,22 @@
+#actorDetail{
+  padding-top: 90px;
+  display: flex;
+  justify-content: flex-start;
+  .actorDetail{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    &__title{
+      max-width: 800px;
+      h3{
+        padding: 20px 0;
+      }
+      &-biography{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-top: 20px;
+      }
+    }
+  }
+}
