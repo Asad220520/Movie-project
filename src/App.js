@@ -8,6 +8,7 @@ import Login from './components/Login';
 import MovieDetail from './pages/MovieDetail';
 import ActorDetail from './pages/ActorDetail';
 import Search from './components/Search';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='/Movies/Details/actor/:actorId' element={<ActorDetail />} />
         <Route path='/movie/search/:movieName' element={<Search/>} />
       </Routes>
+      <Footer/>
     </div>
   );
 }
