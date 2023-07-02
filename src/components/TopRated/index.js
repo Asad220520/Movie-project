@@ -1,18 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import MovieCard from '../MovieCard'
 import axios from 'axios'
 import { API_KEY } from '../API'
+import { LanguageContext } from '../../context'
 
 function TopRated() {
   const [popular, setPopular] = useState([])
   const [count, setCount] = useState(1)
+  const {language} = useContext(LanguageContext)
   const getPopular = (key) => {
-    axios(`https://api.themoviedb.org/3/movie/top_rated?api_key=${key}&language=en-US&page=${count}`)
-      .then((res) => setPopular(res.data.results))
+    axios(
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=${key}&language=${language}&page=${count}`
+    ).then((res) => setPopular(res.data.results));
   }
   useEffect(() => {
-    getPopular(API_KEY)
-  }, [count])
+    getPopular(API_KEY);
+  }, [count, language]);
 
   // ----Count----
   const handelNext = () => {

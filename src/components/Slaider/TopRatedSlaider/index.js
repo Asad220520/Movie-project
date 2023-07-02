@@ -12,7 +12,6 @@ function TopRatedSlaider() {
   useEffect(() => {
     getPopular(API_KEY)
   }, [])
-  console.log(popular);
   return (
     <div id='topRatedSlaider'>
       <div className="container">

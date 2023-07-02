@@ -18,7 +18,6 @@ function ActorDetail() {
     getActorDetails(API_KEY)
   }, [])
 
-  console.log(actorDetails);
   const { profile_path, name, biography, also_known_as, birthday, place_of_birth } = actorDetails
 
 

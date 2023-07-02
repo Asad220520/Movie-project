@@ -1,25 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { API_KEY } from '../../components/API';
 import { IoIosBookmark, IoIosHeart, IoIosStar, IoMdListBox, IoMdPlay } from 'react-icons/io';
 import Actors from '../../components/Actors';
 import Treyler from '../../components/Treyler';
+import { LanguageContext } from '../../context';
 
 function MovieDetail() {
   const { movieId } = useParams();
   const [details, setDetails] = useState({});
   const [click, setClick] = useState({ listBox: false, heart: false, bookmark: false, star: false, fr: false });
+  const {language} = useContext(LanguageContext)
 
   const getPopular = (key) => {
-    axios(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${key}&language=en-US`)
-      .then((res) => setDetails(res.data))
+    axios(
+      `https://api.themoviedb.org/3/movie/${movieId}?api_key=${key}&language=${language}`
+    ).then((res) => setDetails(res.data));
   }
 
   useEffect(() => {
     getPopular(API_KEY);
-  }, []);
-console.log( 'deta',details);
+  }, [language]);
   const openModal = () => {
     setClick((prevState) => ({ ...prevState, fr: true }));
   };

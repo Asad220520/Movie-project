@@ -12,7 +12,6 @@ function Actors({ id }) {
   useEffect(() => {
     getActors(API_KEY)
   }, [])
-  console.log(actors);
   const settings = {
     dots: false,
     infinite: true,
